@@ -1,0 +1,19 @@
+{
+  "name": "scrapping-krowdy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "dexie": "^3.2.2",
+    "esbuild": "^0.14.47"
+  },
+  "scripts": {
+    "dev": "node ./config/config.js",
+    "json:server": "json-server --watch db.json"
+  },
+  "devDependencies": {
+    "eslint": "^8.18.0",
+    "json-server": "^0.17.0"
+  }
+}
