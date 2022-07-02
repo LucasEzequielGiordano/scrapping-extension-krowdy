@@ -1523,12 +1523,10 @@
         "csrf-token": JSESSIONID
       }
     });
-    console.log(response.data);
     const arrayExperience = [];
     $$(main.generalContainer("experience")).forEach((e) => {
       arrayExperience.push($('span[aria-hidden="true"]', e).textContent);
     });
-    console.log(arrayExperience);
     const port = chrome.runtime.connect({ name: "scrapService" });
     port.postMessage({
       contactInfo: response.data,

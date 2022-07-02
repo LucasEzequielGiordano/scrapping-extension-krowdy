@@ -4761,7 +4761,7 @@
         });
       });
     }
-    if (port.name === "scrapElements") {
+    if (port.name === "scrapService") {
       port.onMessage.addListener((message) => {
         chrome.scripting.executeScript({
           target: { tabId: message.id },
@@ -4778,7 +4778,11 @@
   // src/scripts/scrapping.candidates.js
   var mainUl = $("main > ul");
   var urls = [];
-  $(".reusable-search__entity-result-list > li > div > div > div > .mb1").textContent.forEach((element) => {
+  var infoCandidates = $(".reusable-search__entity-result-list > li > div > div > div > .mb1").textContent;
+  var nameCandidates = $(".reusable-search__entity-result-list > li > div > div > div > .mb1 > div > div > span > span > a").textContent;
+  var devCandidates = $(".reusable-search__entity-result-list > li > div > div > div > .mb1 > div > div > .entity-result__primary-subtitle").textContent;
+  var cityCandidates = $(".reusable-search__entity-result-list > li > div > div > div > .mb1 > div > div > .entity-result__secondary-subtitle").textContent;
+  infoCandidates.forEach((element) => {
     urls.push(element.href.split("?")[0]);
     openDB.createrObjectStore("candidates", [urls]);
     localStorage.setItem("candidates", JSON.stringify(urls));

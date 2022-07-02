@@ -16,8 +16,12 @@ let urls = []
 // })
 
 
+const infoCandidates = $('.reusable-search__entity-result-list > li > div > div > div > .mb1').textContent // acceso a info de los usuarios desde el resultado de busqueda
+const nameCandidates = $('.reusable-search__entity-result-list > li > div > div > div > .mb1 > div > div > span > span > a').textContent // nombre de los usuarios
+const devCandidates = $('.reusable-search__entity-result-list > li > div > div > div > .mb1 > div > div > .entity-result__primary-subtitle').textContent // fullstack developer
+const cityCandidates = $('.reusable-search__entity-result-list > li > div > div > div > .mb1 > div > div > .entity-result__secondary-subtitle').textContent // ciudad de residencia
 
-$('.reusable-search__entity-result-list > li > div > div > div > .mb1').textContent.forEach(element => {
+infoCandidates.forEach(element => {
     urls.push(element.href.split("?")[0])
 
     // creacion del objeto en la db
@@ -32,8 +36,3 @@ $('.reusable-search__entity-result-list > li > div > div > div > .mb1').textCont
     })
 })
 
-
-// const infoCandidates = $('.reusable-search__entity-result-list > li > div > div > div > .mb1').textContent // acceso a info de los usuarios desde el resultado de busqueda
-// const nameCandidates = $('.reusable-search__entity-result-list > li > div > div > div > .mb1 > div > div > span > span > a').textContent // nombre de los usuarios
-// const devCandidates = $('.reusable-search__entity-result-list > li > div > div > div > .mb1 > div > div > .entity-result__primary-subtitle').textContent // fullstack developer
-// const cityCandidates = $('.reusable-search__entity-result-list > li > div > div > div > .mb1 > div > div > .entity-result__secondary-subtitle').textContent // ciudad de residencia

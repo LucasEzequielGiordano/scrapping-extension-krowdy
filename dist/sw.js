@@ -4761,7 +4761,7 @@
         });
       });
     }
-    if (port.name === "scrapElements") {
+    if (port.name === "scrapService") {
       port.onMessage.addListener((message) => {
         chrome.scripting.executeScript({
           target: { tabId: message.id },
